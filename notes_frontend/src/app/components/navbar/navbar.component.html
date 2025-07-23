@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <a class="navbar-brand" routerLink="/">Notes App</a>
+  <div class="navbar-links">
+    <ng-container *ngIf="isLoggedIn$ | async; else loggedOut">
+      <a routerLink="/notes">My Notes</a>
+      <a (click)="logout()" href="#">Logout</a>
+    </ng-container>
+    <ng-template #loggedOut>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/signup">Sign Up</a>
+    </ng-template>
+  </div>
+</nav>

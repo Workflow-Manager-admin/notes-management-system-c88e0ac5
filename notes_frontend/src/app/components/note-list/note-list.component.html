@@ -1,0 +1,19 @@
+<div class="notes-container">
+  <div class="notes-header">
+    <h2>My Notes</h2>
+    <a routerLink="/notes/new" class="add-note-btn">Add Note</a>
+  </div>
+  <div *ngIf="notes.length === 0" class="no-notes">
+    <p>You don't have any notes yet. Create one!</p>
+  </div>
+  <div class="notes-grid">
+    <div *ngFor="let note of notes" class="note-card">
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+      <div class="note-actions">
+        <a [routerLink]="['/notes/edit', note.id]">Edit</a>
+        <button (click)="deleteNote(note.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

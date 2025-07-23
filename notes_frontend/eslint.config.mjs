@@ -36,13 +36,15 @@ export default [
         afterEach: "readonly",
         process: "readonly",
         console: "readonly",
+        localStorage: "readonly",
       },
     },
     plugins: {
       "@typescript-eslint": tseslint,
     },
     rules: {
-      // Your custom rules here
+      "no-unused-vars": "warn",
+      "no-undef": "warn"
     },
   },
 ];
